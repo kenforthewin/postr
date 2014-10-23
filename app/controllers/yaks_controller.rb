@@ -11,6 +11,7 @@ class YaksController < ApplicationController
   # GET /yaks/1
   # GET /yaks/1.json
   def show
+    redirect_to root_path
   end
 
   # GET /yaks/new
@@ -35,7 +36,7 @@ class YaksController < ApplicationController
 
     respond_to do |format|
       if @yak.save
-        format.html { redirect_to @yak, notice: 'Yak was successfully created.' }
+        format.html { redirect_to @yak, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @yak }
       else
         format.html { render :new }
@@ -70,7 +71,7 @@ class YaksController < ApplicationController
   def update
     respond_to do |format|
       if @yak.update(yak_params)
-        format.html { redirect_to @yak, notice: 'Yak was successfully updated.' }
+        format.html { redirect_to @yak, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @yak }
       else
         format.html { render :edit }
@@ -84,7 +85,7 @@ class YaksController < ApplicationController
   def destroy
     @yak.destroy
     respond_to do |format|
-      format.html { redirect_to my_yaks_path, notice: 'Yak was successfully destroyed.' }
+      format.html { redirect_to my_yaks_path, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
