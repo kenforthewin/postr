@@ -1,0 +1,16 @@
+.row
+  - @yaks.each do |yak|
+    .col-md-8.col-md-offset-2
+      .panel.panel-default
+        .panel-body
+          .col-md-1
+            .row
+              Score
+            .row
+              .container
+                %h4
+                  = yak.get_upvotes.size - yak.get_downvotes.size
+          .col-md-10
+            = yak.body
+          .col-md-1
+            = link_to 'delete', delete_path(yak.id)
