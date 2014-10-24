@@ -37,6 +37,10 @@ gem 'acts_as_votable'
 gem 'pg', 				group: :production
 gem 'rails_12factor', 	group: :production
 
+gem 'will_paginate'
+
+gem 'will_paginate-bootstrap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

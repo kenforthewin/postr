@@ -1,5 +1,7 @@
-- @yaks.each do |yak|
-  .container
+.row
+  .col-md-offset-4
+    = will_paginate @yaks, renderer: BootstrapPagination::Rails
+  - @yaks.each do |yak|
     .row
       .col-md-8.col-md-offset-1
         .panel.panel-default
@@ -9,7 +11,6 @@
                 .container
                   = link_to upvote_path(yak.id) do
                     %i.glyphicon.glyphicon-chevron-up
-              /    %span.glyphicon.glyphicon-chevron-up
               .row
                 .container
                   %h4{ :id => "score" }
@@ -18,7 +19,9 @@
                 .container
                   = link_to downvote_path(yak.id) do
                     %i.glyphicon.glyphicon-chevron-down
-              /    %span.glyphicon.glyphicon-chevron-down
             .col-md-11
               %h4
                 = link_to yak.body, show_path(yak.id)
+.row
+  .col-md-offset-4
+    = will_paginate @yaks, renderer: BootstrapPagination::Rails

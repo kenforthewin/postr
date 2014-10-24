@@ -5,7 +5,7 @@ class YaksController < ApplicationController
   # GET /yaks
   # GET /yaks.json
   def index
-    @yaks = Yak.all
+    @yaks = Yak.paginate(page: params[:page]).order('created_at DESC')
   end
 
   # GET /yaks/1
