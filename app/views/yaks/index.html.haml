@@ -1,25 +1,23 @@
-.row
-  - @yaks.each do |yak|
-    .col-md-8.col-md-offset-2
-      .panel.panel-default
-        .panel-body
-          .col-md-1
-            .row
-              Score
-            .row
-              .container
-                %h4{ :id => "score" }
-                  = yak.get_upvotes.size - yak.get_downvotes.size
-          .col-md-10
-            = yak.body
-          .col-md-1
-            .row
-              .container
-                = link_to upvote_path(yak.id), :class => "btn btn-default", id: 'upvote' do
-                  %i.glyphicon.glyphicon-chevron-up
-            /    %span.glyphicon.glyphicon-chevron-up
-            .row
-              .container
-                = link_to downvote_path(yak.id), :class => "btn btn-default", id: 'downvote' do
-                  %i.glyphicon.glyphicon-chevron-down
-            /    %span.glyphicon.glyphicon-chevron-down
+- @yaks.each do |yak|
+  .container
+    .row
+      .col-md-8.col-md-offset-1
+        .panel.panel-default
+          .panel-body
+            .col-md-1
+              .row
+                .container
+                  = link_to upvote_path(yak.id) do
+                    %i.glyphicon.glyphicon-chevron-up
+              /    %span.glyphicon.glyphicon-chevron-up
+              .row
+                .container
+                  %h4{ :id => "score" }
+                    = yak.get_upvotes.size - yak.get_downvotes.size
+              .row
+                .container
+                  = link_to downvote_path(yak.id) do
+                    %i.glyphicon.glyphicon-chevron-down
+              /    %span.glyphicon.glyphicon-chevron-down
+            .col-md-11
+              = yak.body

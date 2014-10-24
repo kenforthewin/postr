@@ -8,7 +8,7 @@
   %body
     %header.navbar.navbar-fixed-top
       %nav.navbar.navbar-default
-        .container-fluid
+        .container
           .navbar-header
             %button.navbar-toggle{ :type => "button", :"data-toggle" => "collapse", :"data-target" => ".navbar-collapse" }
               %span.sr-only Toggle navigation
@@ -24,7 +24,7 @@
             %ul.nav.navbar-nav.navbar-right
               %li
                 = link_to new_path do
-                  %i.glyphicon.glyphicon-pencil New
+                  %i.glyphicon.glyphicon-pencil  New
     #main{:role => "main"}
       .container
         .content

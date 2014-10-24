@@ -11,7 +11,7 @@ class YaksController < ApplicationController
   # GET /yaks/1
   # GET /yaks/1.json
   def show
-    redirect_to root_path
+    @comment = Comment.new
   end
 
   # GET /yaks/new

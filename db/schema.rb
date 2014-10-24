@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023152910) do
+ActiveRecord::Schema.define(version: 20141024010900) do
+
+  create_table "comments", force: true do |t|
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "yak_id"
+    t.integer  "score"
+  end
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
