@@ -52,7 +52,10 @@ class YaksController < ApplicationController
       @yak.vote_by :voter => get_current_user, :vote => 'like'
     end
 
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   end
 
   def downvote
