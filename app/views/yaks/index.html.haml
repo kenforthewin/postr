@@ -9,11 +9,11 @@
             .col-md-1
               .row
                 .container
-                  = link_to upvote_path(yak.id) do
+                  = link_to(upvote_path(yak.id), html_options = {id: "upvote", class: "upvote"})  do
                     %i.glyphicon.glyphicon-chevron-up
               .row
                 .container
-                  %h4{ :id => "score" }
+                  %h4{ :id => "score", class: "score" }
                     = yak.get_upvotes.size - yak.get_downvotes.size
               .row
                 .container
