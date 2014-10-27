@@ -96,6 +96,22 @@ class YaksController < ApplicationController
     end
   end
 
+  def top
+    sort = params[:sort]
+
+    if sort == 'hour'
+      @yaks = Yak.where("created_at >= ?", Time.now - 1.hour).paginate(page: params[:page]).order('cached_weighted_score DESC')
+    elsif sort == 'day'
+      @yaks = Yak.where("created_at >= ?", Time.now - 1.day).paginate(page: params[:page]).order('cached_weighted_score DESC')
+    elsif sort == 'month'
+      @yaks = Yak.where("created_at >= ?", Time.now - 1.month).paginate(page: params[:page]).order('cached_weighted_score DESC')
+    elsif sort == 'year'
+      @yaks = Yak.where("created_at >= ?", Time.now - 1.year).paginate(page: params[:page]).order('cached_weighted_score DESC')
+    else
+      @yaks = Yak.all.paginate(page: params[:page]).order('cached_weighted_score DESC')
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_yak

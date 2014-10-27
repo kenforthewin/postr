@@ -21,6 +21,8 @@
                 = link_to 'Postr', root_path, html_options = {:class =>'navbar-brand'}
               %li
                 = link_to 'Your Posts', my_yaks_path
+              %li
+                = link_to 'Top Posts', top_path('day')
             %ul.nav.navbar-nav.navbar-right
               %li
                 = link_to new_path do
