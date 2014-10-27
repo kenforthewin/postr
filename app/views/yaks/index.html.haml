@@ -9,7 +9,7 @@
             .col-md-1
               .row
                 .container
-                  = link_to(upvote_path(yak.id), html_options = {id: "upvote#{yak.id}", class: "upvote"})  do
+                  = link_to(upvote_path(yak.id), html_options = {id: "upvote#{yak.id}", class: "upvote"}, remote: true)  do
                     %i.glyphicon.glyphicon-chevron-up
               .row
                 .container

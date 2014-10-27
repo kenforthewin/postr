@@ -1,3 +1,3 @@
 var id = "score" + <%= @yak.id%>;
 //alert(id);
-$(document.getElementById(id)).html('<%= @yak.get_upvotes.size - @yak.get_downvotes.size%>')
+$(document.getElementById(id)).html('<%= @yak.get_upvotes.size - @yak.get_downvotes.size%>');

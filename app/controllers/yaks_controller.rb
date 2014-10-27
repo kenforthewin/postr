@@ -53,8 +53,8 @@ class YaksController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to root_path }
       format.js
+      format.html { redirect_to root_path }
     end
   end
 
@@ -66,8 +66,8 @@ class YaksController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to root_path }
       format.js
+      format.html { redirect_to root_path }
     end
   end
 
