@@ -9,15 +9,15 @@
             .col-md-1
               .row
                 .container
-                  = link_to(upvote_path(yak.id), html_options = {id: "upvote", class: "upvote"})  do
+                  = link_to(upvote_path(yak.id), html_options = {id: "upvote#{yak.id}", class: "upvote"})  do
                     %i.glyphicon.glyphicon-chevron-up
               .row
                 .container
-                  %h4{ :id => "score", class: "score" }
+                  %h4{ :id => "score#{yak.id}", class: "score" }
                     = yak.get_upvotes.size - yak.get_downvotes.size
               .row
                 .container
-                  = link_to downvote_path(yak.id) do
+                  = link_to(downvote_path(yak.id), html_options = {id: "downvote#{yak.id}", class: "downvote"}) do
                     %i.glyphicon.glyphicon-chevron-down
             .col-md-11
               %h4

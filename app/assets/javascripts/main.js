@@ -3,8 +3,8 @@ jQuery.ajaxSetup({
 })
 
 $(document).ready(function() {
-	$("#upvote").click(function() {
-		$.get($(this).attr("href"), "script");
+	$(".upvote,.downvote").click(function() {
+		$.get($(this).attr("href"), $(this).attr("id"), "script");
 		return false;
 	})
 })

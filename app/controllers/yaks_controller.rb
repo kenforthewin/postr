@@ -65,7 +65,10 @@ class YaksController < ApplicationController
       @yak.downvote_from get_current_user
     end
 
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
   end
 
 
