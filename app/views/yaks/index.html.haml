@@ -1,9 +1,9 @@
 .row
-  .col-md-offset-4
+  .col-md-offset-5
     = will_paginate @yaks, renderer: BootstrapPagination::Rails
   - @yaks.each do |yak|
     .row
-      .col-md-8.col-md-offset-1
+      .col-md-8.col-md-offset-2
         .panel.panel-default
           .panel-body
             .col-md-1
@@ -24,5 +24,5 @@
               %h4
                 = link_to yak.body, show_path(yak.id)
 .row
-  .col-md-offset-4
+  .col-md-offset-5
     = will_paginate @yaks, renderer: BootstrapPagination::Rails
