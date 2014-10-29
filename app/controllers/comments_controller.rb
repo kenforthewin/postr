@@ -4,7 +4,11 @@ class CommentsController < ApplicationController
 		@comment = Comment.new(comment_params)
 		@comment.score = 0
 		@comment.save
-		redirect_to show_path(@comment.yak_id)
+
+		respond_to do |format|
+			format.html { redirect_to show_path(@comment.yak_id) }
+			format.js
+		end
 	end
 
 	private

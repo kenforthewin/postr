@@ -11,6 +11,6 @@
                 %h4
                   = yak.get_upvotes.size - yak.get_downvotes.size
           .col-md-10
-            = yak.body
+            = link_to yak.body, show_path(yak.id)
           .col-md-1
             = link_to 'delete', delete_path(yak.id)

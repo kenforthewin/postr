@@ -3,4 +3,6 @@ class Yak < ActiveRecord::Base
 	has_many :comments
 	acts_as_votable
 	self.per_page = 10
+
+	validates :body, presence: true
 end

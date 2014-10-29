@@ -1,6 +1,6 @@
 .container
   .row
-    .col-md-8.col-md-offset-1
+    .col-md-8.col-md-offset-2
       .panel.panel-default
         .panel-body
           .row
@@ -9,19 +9,15 @@
                 = @yak.body
               %hr
           %h3 Comments:
-          = simple_form_for @comment, defaults: { input_html: {class: 'form-control'} } do |f|
+          = simple_form_for @comment, html: {id: 'comment_form'}, defaults: { input_html: {class: 'form-control'} } do |f|
             =f.error_notification
             .form-inputs
               .col-md-12
-                = f.input :body, as: :text, label: false
+                = f.input :body, as: :text, label: false, id: 'comment_body'
             = f.hidden_field :yak_id, value: @yak.id
             .form-inputs
               .col-md-2.col-md-offset-10
                 %br
-                = f.submit 'Submit'
-          - @yak.comments.order('created_at DESC').each do |comment|
-            .row
-              .col-md-12
-                %h4
-                  =comment.body
-                %hr
+                = f.submit 'Submit', id: 'submit_comment'
+          %div{id: "comments"}
+            = render partial: @yak.comments
